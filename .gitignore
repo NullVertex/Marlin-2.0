@@ -36,6 +36,7 @@ applet/
 *.orig
 *.rej
 *.bak
+*.bat
 *.idea
 *.s
 *.i

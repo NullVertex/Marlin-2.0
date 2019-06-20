@@ -616,11 +616,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
-#if ENABLED(PROBE_EZABL, PROBE_EZABL_MINI, PROBE_BLTOUCH)
-  #define Z_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
-#else
-  #define Z_MIN_ENDSTOP_INVERTING false
-#endif
+#define Z_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
@@ -1130,8 +1126,12 @@
 //#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
+<<<<<<< HEAD
   #define FIL_RUNOUT_PIN 19          // Use Z+ Endstop pin for filament runout
   #define FIL_RUNOUT_INVERTING false // set to true to invert the logic of the sensor.
+=======
+  #define FIL_RUNOUT_INVERTING false // Set to true to invert the logic of the sensor.
+>>>>>>> dd06017f642b0396389e85796e447ecee47fdd4b
   #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 

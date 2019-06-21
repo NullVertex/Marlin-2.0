@@ -283,14 +283,14 @@
  * the fan will turn on when any selected extruder is above the threshold.
  */
 
-#define E0_AUTO_FAN_PIN 7 // Use E1 Pin as it supports PWM/Controllable
+#define E0_AUTO_FAN_PIN -1 // Always on 5V Noctua attached, controllable not required
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
 #define E4_AUTO_FAN_PIN -1
 #define E5_AUTO_FAN_PIN -1
 #define CHAMBER_AUTO_FAN_PIN -1
-#define EXTRUDER_AUTO_FAN_TEMPERATURE EXTRUDE_MINTEMP // THIS CONTROLS THE EXTRUDER STEPPER BLOWER FAN, TRUE E0 FAN SHOULD BE AN ALWAYS ON 5V NOCTUA
+#define EXTRUDER_AUTO_FAN_TEMPERATURE 50
 #define EXTRUDER_AUTO_FAN_SPEED 255   // 255 == full speed
 
 /**
@@ -854,10 +854,6 @@
    */
   //#define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
-<<<<<<< HEAD
-    //#define POWER_LOSS_PIN   44     // Pin to detect power loss
-    //#define POWER_LOSS_STATE HIGH   // State of pin indicating power loss
-=======
     //#define POWER_LOSS_PIN         44 // Pin to detect power loss
     //#define POWER_LOSS_STATE     HIGH // State of pin indicating power loss
     //#define POWER_LOSS_PURGE_LEN   20 // (mm) Length of filament to purge on resume
@@ -866,7 +862,6 @@
     // Without a POWER_LOSS_PIN the following option helps reduce wear on the SD card,
     // especially with "vase mode" printing. Set too high and vases cannot be continued.
     #define POWER_LOSS_MIN_Z_CHANGE 0.05 // (mm) Minimum Z change before saving power-loss data
->>>>>>> dd06017f642b0396389e85796e447ecee47fdd4b
   #endif
 
   /**

@@ -232,12 +232,12 @@ void GCodeQueue::ok_to_send() {
   if (!send_ok[index_r]) return;
   SERIAL_ECHOPGM(MSG_OK);
   #if ENABLED(ADVANCED_OK)
-    char* p = buffer[index_r];
-    if (*p == 'N') {
+    char* c = buffer[index_r];
+    if (*c == 'N') {
       SERIAL_ECHO(' ');
-      SERIAL_ECHO(*p++);
-      while (NUMERIC_SIGNED(*p))
-        SERIAL_ECHO(*p++);
+      SERIAL_ECHO(*c++);
+      while (NUMERIC_SIGNED(*c))
+        SERIAL_ECHO(*c++);
     }
     SERIAL_ECHOPGM(" P"); SERIAL_ECHO(int(BLOCK_BUFFER_SIZE - planner.movesplanned() - 1));
     SERIAL_ECHOPGM(" B"); SERIAL_ECHO(BUFSIZE - length);
